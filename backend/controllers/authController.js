@@ -4,7 +4,7 @@ const generateToken = require('../utils/generateToken.js')
 
 
 const cookieOptions = { httpOnly: true ,secure:process.env.NODE_ENV === 'production',sameSite: 'None', path: '/'}
-const tokenExpireTime = new Date(Date.now() + 2 * 60 * 1000);
+const tokenExpireTime = new Date(Date.now() + 127 * 1000);
 // Register a new user
 const registerUser = async (req, res) => {
   const { name, email, password  } = req.body;

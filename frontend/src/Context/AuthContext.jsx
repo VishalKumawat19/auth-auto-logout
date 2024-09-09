@@ -65,7 +65,7 @@ export const AuthProvider = ({ children }) => {
           navigate("/home");
           setTimeout(() => {
             autoLogout();
-          }, 116000);
+          }, 120000);
         }
       } catch (error) {
         console.log("failed to signup", error);
@@ -87,14 +87,17 @@ export const AuthProvider = ({ children }) => {
 
   const autoLogout = async () => {
     try {
+      setLoading(true)
       const response = await logoutUser();
       console.log(response);
       if (response.status == 200) {
+        setLoading(false)
         setIsAuthenticated(false)
         navigate("/");
         alert("session timed out");
       }
     } catch (error) {
+      setLoading(false)
       console.log(error);
       alert('server error');
     }
