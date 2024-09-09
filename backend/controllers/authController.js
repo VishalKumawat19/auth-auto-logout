@@ -68,11 +68,14 @@ const loginUser = async (req, res) => {
 const logoutUser = async (req, res) => {
  try {
   const user = await User.findById(req.user._id);
-  res.clearCookie('token');
   user.activeToken = null;
   user.tokenExpireTime = null;
-  await user.save();
-  res.json({ msg: 'Logged out successfully' });
+  const savedUser = await user.save();
+  if(savedUser){ 
+    res.clearCookie('token');
+    res.json({ msg: 'Logged out successfully' });
+  }
+  
  } catch (error) {
     console.error(error)
     res.status(500).json({ msg: 'Server error' }); 
