@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
               navigate("/home");
               setTimeout(() => {
                 autoLogout();
-              }, 118000);
+              },120000);
             }
           } catch (error) {
             console.log("failed to login", error);
@@ -65,7 +65,7 @@ export const AuthProvider = ({ children }) => {
           navigate("/home");
           setTimeout(() => {
             autoLogout();
-          }, 118000);
+          }, 116000);
         }
       } catch (error) {
         console.log("failed to signup", error);
