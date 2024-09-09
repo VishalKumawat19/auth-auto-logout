@@ -10,9 +10,9 @@ const authMiddleware = async (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const user = await User.findById(decoded.userId);
 
-    if (Date.now() > user.tokenExpireTime) {
-      return res.status(401).json({ msg: 'Session expired, please log in again' });
-    }
+    // if (Date.now() > user.tokenExpireTime) {
+    //   return res.status(401).json({ msg: 'Session expired, please log in again' });
+    // }
 
     req.user = user;
     next();
