@@ -65,7 +65,7 @@ export const AuthProvider = ({ children }) => {
           navigate("/home");
           setTimeout(() => {
             autoLogout();
-          }, 120000);
+          }, 60000);
         }
       } catch (error) {
         console.log("failed to signup", error);
