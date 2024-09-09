@@ -1,0 +1,20 @@
+.button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+  
+  @media (max-width: 768px) {
+    .button {
+      padding: 10px;
+    }
+  }
+  
